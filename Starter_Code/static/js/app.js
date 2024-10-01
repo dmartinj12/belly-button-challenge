@@ -50,6 +50,10 @@ d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").th
 
     let layout = {
       
+      title:"Top 10 Bacteria Cultures Found",
+      xaxis: {
+        title: { text: "Number of Bacteria" },
+    },
 
     };
 
@@ -72,9 +76,14 @@ let trace2 = {
 let data2 = [trace2];
 
 let layout2 = {
+
+  title:"Bacteria Cultures per Sample",
   xaxis: {
       title: { text: "OTU ID" },
   },
+  yaxis: {
+    title:{text: "Number of Bacteria"}
+  }
 };
 Plotly.newPlot("bubble", data2, layout2);
 
@@ -94,13 +103,13 @@ let demographicBox = d3.select("#sample-metadata");
 
 let metadataBox1 = metadata.find(metadataBox1 => metadataBox1.id = 940)
   demographicBox.html(
-  `id: ${metadataBox1.id} <br> 
-  ethnicity: ${metadataBox1.ethnicity} <br>
-  gender: ${metadataBox1.gender} <br>
-  age: ${metadataBox1.age} <br>
-  location: ${metadataBox1.location} <br>
-  bbtype: ${metadataBox1.bbtype} <br>
-  wfreq: ${metadataBox1.wfreq}`
+  `ID: ${metadataBox1.id} <br> 
+  ETHNICITY: ${metadataBox1.ethnicity} <br>
+  GENDER: ${metadataBox1.gender} <br>
+  AGE: ${metadataBox1.age} <br>
+  LOCATION: ${metadataBox1.location} <br>
+  BBTYPE: ${metadataBox1.bbtype} <br>
+  WFREQ: ${metadataBox1.wfreq}`
   );
 
 
